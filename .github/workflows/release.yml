@@ -34,11 +34,14 @@ jobs:
       - name: Package extension
         run: npm run package
 
-      - name: Upload VSIX to GitHub Release
-        uses: softprops/action-gh-release@v2
-        with:
-          files: '*.vsix'
-          generate_release_notes: true
+      - name: Create GitHub Release and upload VSIX
+        run: |
+          VSIX=$(ls *.vsix | head -1)
+          gh release create "${{ github.ref_name }}" "$VSIX" \
+            --title "Release ${{ github.ref_name }}" \
+            --generate-notes
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # ── Optional: publish to Open VSX Registry ──────────────────────────
       # Uncomment after creating an account at https://open-vsx.org/
