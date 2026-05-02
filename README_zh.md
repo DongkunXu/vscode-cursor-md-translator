@@ -65,6 +65,7 @@ npm install && npm run generate-icon && npm run compile && npm run package
 | `mdTranslator.apiKey` | *(空)* | API 密钥 |
 | `mdTranslator.model` | `gpt-4o` | 模型名称 |
 | `mdTranslator.targetLanguage` | `Chinese (Simplified)` | 目标语言 |
+| `mdTranslator.translationStyle` | `Professional` | 翻译风格：`Professional` / `Legal` / `Financial` / `Engineering` / `Literary` / `🎭 Chaos Mode` |
 | `mdTranslator.chunkSize` | `3000` | 每次 API 调用最大字符数 |
 | `mdTranslator.requestTimeoutMs` | `90000` | 请求超时时间（毫秒） |
 

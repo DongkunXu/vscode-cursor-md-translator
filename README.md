@@ -65,6 +65,7 @@ Search **"Markdown Translator"** in Settings (`Cmd+,`), or edit `settings.json` 
 | `mdTranslator.apiKey` | *(empty)* | Your API key |
 | `mdTranslator.model` | `gpt-4o` | Model name |
 | `mdTranslator.targetLanguage` | `Chinese (Simplified)` | Target language |
+| `mdTranslator.translationStyle` | `Professional` | Translation style: `Professional` / `Legal` / `Financial` / `Engineering` / `Literary` / `🎭 Chaos Mode` |
 | `mdTranslator.chunkSize` | `3000` | Characters per API call |
 | `mdTranslator.requestTimeoutMs` | `90000` | Request timeout (ms) |
 
