@@ -107,7 +107,7 @@ Open any `.md` file. Three entry points:
 
 | Entry point | How |
 |---|---|
-| **Status bar** | Click `$(globe) Translate` in the bottom-right corner |
+| **Status bar / title bar** | Click `$(globe) Translate` in the bottom-right status bar, or the globe icon in the top-right editor title bar |
 | **Right-click** | Right-click in editor → *Markdown Translator: Open Translated Preview* |
 | **Command palette** | `Cmd+Shift+P` → *Markdown Translator: …* |
 

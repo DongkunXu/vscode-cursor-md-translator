@@ -107,7 +107,7 @@ npm install && npm run generate-icon && npm run compile && npm run package
 
 | 入口 | 操作 |
 |---|---|
-| **状态栏** | 点击右下角 `$(globe) Translate` 按钮 |
+| **状态栏 / 标题栏** | 点击右下角状态栏的 `$(globe) Translate` 按钮，或编辑器右上角标题栏的地球图标 |
 | **右键菜单** | 在编辑器内右键 → *Markdown Translator: Open Translated Preview* |
 | **命令面板** | `Cmd+Shift+P` → *Markdown Translator: …* |
 
