@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write
 
+env:
+  # Opt into Node.js 24 for action runtimes (required as of May 2026).
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   build-and-release:
     runs-on: ubuntu-latest
@@ -19,7 +23,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '22'   # LTS, supported until April 2027
           cache: 'npm'
 
       - name: Install dependencies
@@ -41,11 +45,10 @@ jobs:
         run: |
           TAG="${{ github.ref_name }}"
           VSIX=$(ls *.vsix | head -1)
-          echo "Tag: $TAG"
-          echo "VSIX: $VSIX"
+          echo "Tag: $TAG  |  VSIX: $VSIX"
 
-          # Clean up any existing release from a previous failed run
-          gh release delete "$TAG" --yes 2>/dev/null && echo "Deleted existing release" || echo "No existing release"
+          # Clean up any leftover release from previous failed runs
+          gh release delete "$TAG" --yes 2>/dev/null && echo "Deleted existing release" || echo "No prior release found"
 
           gh release create "$TAG" "$VSIX" \
             --title "Release $TAG" \
