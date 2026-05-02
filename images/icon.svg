@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#1E3A8A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="128" height="128" rx="22" fill="url(#bg)"/>
+
+  <!-- Globe: outer circle -->
+  <circle cx="64" cy="50" r="30" fill="none" stroke="white" stroke-width="5.5"/>
+
+  <!-- Globe: vertical longitude ellipse -->
+  <ellipse cx="64" cy="50" rx="13" ry="30" fill="none" stroke="white" stroke-width="4"/>
+
+  <!-- Globe: horizontal latitude lines -->
+  <line x1="34" y1="50" x2="94" y2="50" stroke="white" stroke-width="4"/>
+  <line x1="39" y1="35" x2="89" y2="35" stroke="white" stroke-width="2.8"/>
+  <line x1="39" y1="65" x2="89" y2="65" stroke="white" stroke-width="2.8"/>
+
+  <!-- "TR" label -->
+  <text x="64" y="108"
+        text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="29"
+        font-weight="bold"
+        fill="white"
+        letter-spacing="5">TR</text>
+</svg>

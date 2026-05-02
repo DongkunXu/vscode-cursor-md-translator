@@ -1,0 +1,153 @@
+{
+  "name": "vscode-cursor-md-translator",
+  "displayName": "Markdown Translator",
+  "description": "Translate Markdown documents while preserving all formatting, powered by any OpenAI-compatible API (OpenAI, DeepSeek, Ollama, etc.)",
+  "version": "1.0.0",
+  "publisher": "DongkunXu",
+  "license": "MIT",
+  "icon": "images/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DongkunXu/vscode-cursor-md-translator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DongkunXu/vscode-cursor-md-translator/issues"
+  },
+  "homepage": "https://github.com/DongkunXu/vscode-cursor-md-translator#readme",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": ["Other"],
+  "keywords": ["markdown", "translate", "translation", "openai", "deepseek", "ollama", "preview", "i18n"],
+  "activationEvents": ["onLanguage:markdown", "onStartupFinished"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "mdTranslator.openTranslatedPreview",
+        "title": "Open Translated Preview (Side)",
+        "category": "Markdown Translator",
+        "icon": "$(globe)"
+      },
+      {
+        "command": "mdTranslator.translateToNewDocument",
+        "title": "Translate to New Document",
+        "category": "Markdown Translator",
+        "icon": "$(files)"
+      },
+      {
+        "command": "mdTranslator.refreshTranslation",
+        "title": "Refresh / Re-translate",
+        "category": "Markdown Translator",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "mdTranslator.selectTargetLanguage",
+        "title": "Select Target Language",
+        "category": "Markdown Translator",
+        "icon": "$(settings-gear)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "when": "resourceLangId == markdown || editorLangId == markdown",
+          "command": "mdTranslator.openTranslatedPreview",
+          "group": "navigation@1"
+        },
+        {
+          "when": "resourceLangId == markdown || editorLangId == markdown",
+          "command": "mdTranslator.refreshTranslation",
+          "group": "navigation@2"
+        }
+      ],
+      "editor/context": [
+        {
+          "when": "resourceLangId == markdown || editorLangId == markdown",
+          "command": "mdTranslator.openTranslatedPreview",
+          "group": "1_mdtranslator@1"
+        },
+        {
+          "when": "resourceLangId == markdown || editorLangId == markdown",
+          "command": "mdTranslator.translateToNewDocument",
+          "group": "1_mdtranslator@2"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Markdown Translator",
+      "properties": {
+        "mdTranslator.apiBaseUrl": {
+          "type": "string",
+          "default": "https://api.openai.com/v1",
+          "markdownDescription": "OpenAI-compatible API base URL.\n\n- **OpenAI**: `https://api.openai.com/v1`\n- **DeepSeek**: `https://api.deepseek.com/v1`\n- **Ollama (local)**: `http://localhost:11434/v1`",
+          "order": 1
+        },
+        "mdTranslator.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "API key for the translation service. For local models (Ollama) use any non-empty string.",
+          "order": 2
+        },
+        "mdTranslator.model": {
+          "type": "string",
+          "default": "gpt-4o",
+          "markdownDescription": "Model name for translation.\n\n- **OpenAI**: `gpt-4o`, `gpt-4o-mini`\n- **DeepSeek**: `deepseek-chat`\n- **Ollama**: `llama3`, `mistral`, etc.",
+          "order": 3
+        },
+        "mdTranslator.targetLanguage": {
+          "type": "string",
+          "default": "Chinese (Simplified)",
+          "description": "Default target language for translation.",
+          "enum": [
+            "Chinese (Simplified)",
+            "Chinese (Traditional)",
+            "English",
+            "Japanese",
+            "Korean",
+            "French",
+            "German",
+            "Spanish",
+            "Portuguese (Brazil)",
+            "Russian",
+            "Arabic",
+            "Italian",
+            "Dutch",
+            "Polish",
+            "Turkish",
+            "Vietnamese",
+            "Thai",
+            "Indonesian"
+          ],
+          "order": 4
+        },
+        "mdTranslator.chunkSize": {
+          "type": "number",
+          "default": 3000,
+          "minimum": 500,
+          "maximum": 15000,
+          "description": "Max characters per API call. Reduce if you hit token limits.",
+          "order": 5
+        },
+        "mdTranslator.requestTimeoutMs": {
+          "type": "number",
+          "default": 90000,
+          "description": "API request timeout in milliseconds.",
+          "order": 6
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "generate-icon": "node scripts/generate-icon.js",
+    "package": "npx @vscode/vsce package --no-dependencies"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@types/vscode": "^1.80.0",
+    "@vscode/vsce": "^3.0.0",
+    "typescript": "^5.0.0"
+  }
+}

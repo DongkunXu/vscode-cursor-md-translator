@@ -1,0 +1,11 @@
+src/**
+scripts/**
+.github/**
+.vscode/**
+.vscode-test/**
+README_zh.md
+README_ja.md
+.gitignore
+tsconfig.json
+node_modules/**
+**/*.map
