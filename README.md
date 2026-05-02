@@ -25,6 +25,10 @@
 
 ---
 
+<p align="center">
+  <img src="images/Chinese%20Demo.png" width="80%" alt="Translation demo">
+</p>
+
 ## Features
 
 - **Format-preserving** — fenced code blocks, inline code, math (`$$` / `$`), tables, blockquotes, task lists, footnotes: all protected via placeholders, never touched by the model
