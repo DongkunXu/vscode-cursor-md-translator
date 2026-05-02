@@ -26,7 +26,7 @@
 ---
 
 <p align="center">
-  <img src="images/Chinese%20Demo.png" width="80%" alt="Translation demo">
+  <img src="images/chinese-demo.png" width="80%" alt="Translation demo">
 </p>
 
 ## Features

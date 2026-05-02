@@ -2,7 +2,7 @@
   "name": "vscode-cursor-md-translator",
   "displayName": "Markdown Translator",
   "description": "Translate Markdown documents while preserving all formatting, powered by any OpenAI-compatible API (OpenAI, DeepSeek, Ollama, etc.)",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "publisher": "DongkunXu",
   "license": "MIT",
   "icon": "images/icon.png",
@@ -121,19 +121,41 @@
           ],
           "order": 4
         },
+        "mdTranslator.translationStyle": {
+          "type": "string",
+          "default": "Professional",
+          "description": "Translation style and register.",
+          "enum": [
+            "Professional",
+            "Legal",
+            "Financial",
+            "Engineering",
+            "Literary",
+            "🎭 Chaos Mode"
+          ],
+          "enumDescriptions": [
+            "Clear, neutral language suitable for general documentation",
+            "Precise legal terminology with a strictly formal register",
+            "Formal financial and business terminology",
+            "Technical precision; engineering terms preserved where useful",
+            "Natural and idiomatic — preserves the author's voice and rhythm",
+            "🤫"
+          ],
+          "order": 5
+        },
         "mdTranslator.chunkSize": {
           "type": "number",
           "default": 3000,
           "minimum": 500,
           "maximum": 15000,
           "description": "Max characters per API call. Reduce if you hit token limits.",
-          "order": 5
+          "order": 6
         },
         "mdTranslator.requestTimeoutMs": {
           "type": "number",
           "default": 90000,
           "description": "API request timeout in milliseconds.",
-          "order": 6
+          "order": 7
         }
       }
     }

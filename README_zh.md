@@ -26,7 +26,7 @@
 ---
 
 <p align="center">
-  <img src="images/Chinese%20Demo.png" width="80%" alt="翻译效果演示">
+  <img src="images/chinese-demo.png" width="80%" alt="翻译效果演示">
 </p>
 
 ## 功能特性

@@ -1,5 +1,6 @@
 src/**
 scripts/**
+demo.md
 .github/**
 .vscode/**
 .vscode-test/**

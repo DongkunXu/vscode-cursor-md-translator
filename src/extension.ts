@@ -216,6 +216,7 @@ function getConfig(): TranslationConfig {
     apiKey: cfg.get('apiKey', ''),
     model: cfg.get('model', 'gpt-4o'),
     targetLanguage: cfg.get('targetLanguage', 'Chinese (Simplified)'),
+    translationStyle: cfg.get('translationStyle', 'Professional'),
     chunkSize: cfg.get('chunkSize', 3000),
     requestTimeoutMs: cfg.get('requestTimeoutMs', 90000),
   };

@@ -26,7 +26,7 @@
 ---
 
 <p align="center">
-  <img src="images/Japanese%20Demo.png" width="80%" alt="翻訳デモ">
+  <img src="images/japanese-demo.png" width="80%" alt="翻訳デモ">
 </p>
 
 ## 機能
